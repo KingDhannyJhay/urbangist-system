@@ -1,0 +1,23 @@
+# railway.toml — Worker Service
+# Deploy this file from the /worker directory on Railway
+
+[build]
+builder = "nixpacks"
+
+[build.nixpacksPlan]
+# Node.js + FFmpeg — Railway installs ffmpeg via nix
+providers = ["node"]
+
+# Nix packages: installs ffmpeg system-wide so fluent-ffmpeg can find it
+[build.nixpacksPlan.phases.setup]
+nixPkgs = ["nodejs_20", "ffmpeg"]
+
+[deploy]
+startCommand = "npm run start"
+# No healthcheck — worker is a long-running process, not an HTTP server
+restartPolicyType        = "on_failure"
+restartPolicyMaxRetries  = 5
+
+[[services]]
+name = "urbangist-worker"
+# Worker does not expose an HTTP port

@@ -1,0 +1,14 @@
+# nixpacks.toml — Worker Service
+# Tells Railway's nixpacks builder to install ffmpeg alongside Node.js
+
+[phases.setup]
+nixPkgs = ["nodejs_20", "ffmpeg-full"]
+
+[phases.install]
+cmds = ["npm ci --prefer-offline"]
+
+[phases.build]
+cmds = ["npm run build"]
+
+[start]
+cmd = "npm run start"

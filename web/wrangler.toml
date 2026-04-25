@@ -1,0 +1,12 @@
+# wrangler.toml — Cloudflare Pages configuration
+# Required by @cloudflare/next-on-pages
+
+name                   = "urbangist-web"
+compatibility_date     = "2024-09-23"
+compatibility_flags    = ["nodejs_compat"]
+pages_build_output_dir = ".vercel/output/static"
+
+[vars]
+# Public env vars can be set here for local preview.
+# For production, set them in the Cloudflare Pages dashboard.
+NEXT_PUBLIC_SITE_URL = "https://urbangist.com.ng"

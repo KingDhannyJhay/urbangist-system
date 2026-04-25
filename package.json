@@ -1,0 +1,20 @@
+{
+  "name": "urbangist-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "UrbanGist — scalable music platform monorepo",
+  "workspaces": [
+    "api",
+    "worker",
+    "web"
+  ],
+  "scripts": {
+    "dev:api":    "cd api    && npm run dev",
+    "dev:worker": "cd worker && npm run dev",
+    "dev:web":    "cd web    && npm run dev",
+    "build:api":    "cd api    && npm run build",
+    "build:worker": "cd worker && npm run build",
+    "build:web":    "cd web    && npm run build",
+    "lint":         "npm run lint --workspaces --if-present"
+  }
+}

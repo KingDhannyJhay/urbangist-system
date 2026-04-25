@@ -1,0 +1,23 @@
+# railway.toml — API Service
+# Deploy this file from the /api directory on Railway
+
+[build]
+builder = "nixpacks"
+
+[build.nixpacksPlan]
+# Standard Node.js build — no native binaries needed
+providers = ["node"]
+
+[deploy]
+startCommand    = "npm run start"
+healthcheckPath = "/health"
+healthcheckTimeout = 30
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3
+
+[[services]]
+name = "urbangist-api"
+
+[services.networking]
+# Railway auto-assigns PORT — api/src/server.ts reads process.env.PORT
+internalPort = 3001
