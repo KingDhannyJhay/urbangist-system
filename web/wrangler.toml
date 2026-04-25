@@ -10,3 +10,5 @@ pages_build_output_dir = ".vercel/output/static"
 # Public env vars can be set here for local preview.
 # For production, set them in the Cloudflare Pages dashboard.
 NEXT_PUBLIC_SITE_URL = "https://urbangist.com.ng"
+NEXT_PUBLIC_SUPABASE_URL = "https://cdxdytbcmdxbttvnmodb.supabase.co"
+NEXT_PUBLIC_SUPABASE_ANON_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNkeGR5dGJjbWR4YnR0dm5tb2RiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzcxMjMyNzAsImV4cCI6MjA5MjY5OTI3MH0.M8WyJFoCXggFUED_9ESbKR0c0YT3YjtUasofEn1h9vI
